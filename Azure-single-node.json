@@ -41,7 +41,7 @@
             "name": "config",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                    "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'),copyindex())]",
+                    "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]",
                     "[parameters('adminUsername')]"
                 ],
             "tags": {
