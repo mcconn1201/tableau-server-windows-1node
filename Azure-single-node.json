@@ -41,8 +41,7 @@
             "name": "config",
             "location": "[resourceGroup().location]",
             "dependsOn": [
-                    "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]",
-                    "[parameters('adminUsername')]"
+                    "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]"
                 ],
             "tags": {
                 "displayName": "config-app"
