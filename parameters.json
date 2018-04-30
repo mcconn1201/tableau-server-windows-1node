@@ -6,7 +6,7 @@
             "value": "mcorneliVM"
         },
         "adminUsername": {
-            "value": "admin"
+            "value": "mcorneli"
         },
         "virtualNetworkName": {
             "value": "mcorneliNET"
@@ -18,7 +18,7 @@
             "value": "mcorneliSG"
         },
         "adminPassword": {
-            "value": "admin"
+            "value": "MasterUser1!"
         },
         "subnetName": {
             "value": "mcorneliSN"
