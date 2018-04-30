@@ -58,7 +58,7 @@
                         ]
                     },
                 "protectedSettings": {
-                    "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File sample.ps1')]"
+                    "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File sample.ps1"
                 }
             }
         },
