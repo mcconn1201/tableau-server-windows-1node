@@ -21,7 +21,7 @@
             "value": "MasterUser1!"
         },
         "subnetName": {
-            "value": "mcorneliSN"
+            "value": "default"
         },
         "publicIpAddressName": {
             "value": "mcorneliIP"
