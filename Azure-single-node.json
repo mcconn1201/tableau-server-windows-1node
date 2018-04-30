@@ -30,7 +30,7 @@
     "variables": {
         "publicIpAddressType" : "Static",
         "publicIpAddressSku" : "Standard",
-        "vnetId": "[resourceId('Default-Storage-CentralUS','Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
+        "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('subnetName'))]",
         "virtualMachineSize": "Standard_D16_v3"
     },
