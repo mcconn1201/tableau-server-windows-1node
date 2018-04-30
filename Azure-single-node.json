@@ -174,10 +174,6 @@
         "adminUsername": {
             "type": "string",
             "value": "[parameters('adminUsername')]"
-        },
-        "publicIpAddress" : {
-            "type": "string",
-            "value" : "[parameters('publicIpAddress')]"
         }
     }
 }
