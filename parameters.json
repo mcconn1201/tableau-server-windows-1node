@@ -9,10 +9,10 @@
             "value": "mcorneli"
         },
         "virtualNetworkName": {
-            "value": "mcorneliNET"
+            "value": "Default-Storage-CentralUS"
         },
         "networkInterfaceName": {
-            "value": "mcorneliNI"
+            "value": "mediumtsperf385"
         },
         "networkSecurityGroupName": {
             "value": "mcorneliSG"
