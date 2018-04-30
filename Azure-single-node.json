@@ -37,8 +37,8 @@
     "resources": [
         {
             "apiVersion": "2015-06-15",
-            "type": "Microsoft.Compute/extensions",
-            "name": "config",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "name": "[concat(parameters('virtualMachineName'), '/', 'config-app')]",
             "location": "[resourceGroup().location]",
             "dependsOn": [
                     "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]"
