@@ -12,12 +12,10 @@
             "type": "string"
         },
         "addressPrefix": {
-            "type": "string",
-            "description" : "VN CIDR block??"
+            "type": "string"
         },
         "subnetAddressPrefix": {
-            "type": "string",
-            "description" : "Subnet CIDR block??"
+            "type": "string"
         },
         "enableDdosProtection": {
             "type": "bool"
