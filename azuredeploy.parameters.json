@@ -11,6 +11,15 @@
         "virtualNetworkName": {
             "value": "Default-Storage-CentralUS"
         },
+        "addressPrefix": {
+            "value": "10.2.0.0/16"
+        },
+        "subnetAddressPrefix": {
+            "value": "10.2.0.0/24"
+        },
+        "enableDdosProtection": {
+            "value": false
+        },
         "networkInterfaceName": {
             "value": "mediumtsperf385"
         },

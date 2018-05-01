@@ -11,6 +11,17 @@
         "virtualNetworkName": {
             "type": "string"
         },
+        "addressPrefix": {
+            "type": "string",
+            "description" : "VN CIDR block??"
+        },
+        "subnetAddressPrefix": {
+            "type": "string",
+            "description" : "Subnet CIDR block??"
+        },
+        "enableDdosProtection": {
+            "type": "bool"
+        },
         "networkInterfaceName": {
             "type": "string"
         },
@@ -35,6 +46,28 @@
         "virtualMachineSize": "Standard_D16_v3"
     },
     "resources": [
+        {
+            "apiVersion":"2018-02-01",
+            "name": "[parameters('virtualNetworkName')]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[parameters('addressPrefix')]"
+                    ]
+                },
+                "subnets" : [
+                    {
+                        "name": "[parameters('subnetName')]",
+                        "properties": {
+                            "addressPrefix": "[parameters('subnetAddressPrefix')"
+                        }
+                    }
+                ],
+                "enableDdosProtection": "[parameters('enableDdosProtection')]"
+            }
+        },
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Compute/virtualMachines/extensions",
