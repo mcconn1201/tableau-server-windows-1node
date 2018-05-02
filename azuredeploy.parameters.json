@@ -21,7 +21,7 @@
             "value": false
         },
         "networkInterfaceName": {
-            "value": "mediumtsperf385"
+            "value": "mcorneli_NI"
         },
         "networkSecurityGroupName": {
             "value": "mcorneliSG"
