@@ -52,7 +52,7 @@ $registration | ConvertTo-Json -depth 10 | Out-File "C:/tabsetup/registration.js
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/ScriptedInstaller.py" -OutFile "C:/tabsetup/ScriptedInstaller.py"
 
 ## 4. Download python .msi
-
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri "https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi" -OutFile "C:/tabsetup/python-2.7.12.msi"
 
 ## 5. download Tableau Server .exe
