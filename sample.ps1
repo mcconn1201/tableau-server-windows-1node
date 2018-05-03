@@ -52,20 +52,21 @@ $registration | ConvertTo-Json -depth 10 | Out-File "C:/tabsetup/registration.js
 # Invoke-WebRequest -Uri "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/ScriptedInstaller.py" -OutFile "C:/tabsetup/ScriptedInstaller.py"
 
 ## 4. Download python .msi
-# [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri "https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi" -OutFile "C:/tabsetup/python-2.7.12.msi"
 
 ## 5. download Tableau Server .exe
 
-# Invoke-WebRequest -Uri "https://downloads.tableau.com/esdalt/2018.1.0/TableauServer-64bit-2018-1-0.exe" -Outfile "C:/tabsetup/tableau-server-installer.exe"
+Invoke-WebRequest -Uri "https://downloads.tableau.com/esdalt/2018.1.0/TableauServer-64bit-2018-1-0.exe" -Outfile "C:/tabsetup/tableau-server-installer.exe"
 
 ## COMMANDS
 ## 1. install python
-# c:\\tabsetup\\python-2.7.12.msi /quiet /qn
+c:\\tabsetup\\python-2.7.12.msi /quiet /qn
 
 ## 2. install yaml
 # IT ISN"T WORKING B?C POWERSHELL TREATE EXECUTABLES DIFFERENTLY, start here
-# c:\\Python27\\Scripts\\pip.exe install pyyaml
+cd c:\\Python27\\Scripts\
+.\pip.exe install pyyaml
 
 ## 3. run installer script
 cd C:\Python27\
