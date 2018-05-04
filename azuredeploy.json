@@ -84,7 +84,7 @@
                 "autoUpgradeMinorVersion": true,
                 "settings" : {
                         "fileUris": [
-                            "https://raw.githubusercontent.com/maddyloo/arm/master/sample.ps1"
+                            "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/config_script.ps1"
                         ]
                     },
                 "protectedSettings": {
