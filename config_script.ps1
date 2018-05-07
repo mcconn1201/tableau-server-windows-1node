@@ -12,10 +12,13 @@ Param(
     [string]$reg_city,
     [string]$reg_state,
     [string]$reg_zip,
-    [string]$reg_country
+    [string]$reg_country,
+    [string]$license_key,
+    [boolean]$trial
 )
 
 ## FILES
+
 ## 1. make secrets.json file
 
 cd C:/
@@ -49,7 +52,7 @@ $registration = @{
 $registration | ConvertTo-Json -depth 10 | Out-File "C:/tabsetup/registration.json" -Encoding ASCII
 
 ## 3. download python installer
-
+# Refer this back to Kitty's hosted version for consistency
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/ScriptedInstaller.py" -OutFile "C:/tabsetup/ScriptedInstaller.py"
 
 ## 4. Download python .msi
@@ -61,16 +64,15 @@ Invoke-WebRequest -Uri "https://www.python.org/ftp/python/2.7.12/python-2.7.12.m
 Invoke-WebRequest -Uri "https://downloads.tableau.com/esdalt/2018.1.0/TableauServer-64bit-2018-1-0.exe" -Outfile "C:/tabsetup/tableau-server-installer.exe"
 
 ## COMMANDS
-## 1. install python and (add to path)
+
+## 1. install python and add to path
 c:\\tabsetup\\python-2.7.12.msi /quiet /qn
-# Set-Location -Path C:/tabsetup
 $env:Path = "C:\Python27\"
 
 ## 2. install yaml
-# IT ISN"T WORKING B?C POWERSHELL TREATE EXECUTABLES DIFFERENTLY, start here
-cd c:\\Python27\\Scripts\
+cd c://Python27//Scripts/
 .\pip.exe install pyyaml
-Set-Location -Path C:\Python27\Scripts
+Set-Location -Path C://Python27//Scripts
 
 ## 2.5 make tabinstall.txt
 New-Item c://tabsetup//tabinstall.txt -ItemType file
@@ -78,7 +80,12 @@ New-Item c://tabsetup//tabinstall.txt -ItemType file
 ## 3. run installer script
 # accomodate for trial key
 cd C:\Python27\
-.\python C:\tabsetup\ScriptedInstaller.py install --installerLog C:/tabsetup/tabinstall.txt --enablePublicFwRule --secretsFile C:/tabsetup/secrets.json --registrationFile C:/tabsetup/registration.json --installDir C:/Tableau/ --licenseKey TSCE-1F6D-6BD0-EB17-FC98 C:/tabsetup/tableau-server-installer.exe
+if ($trial) {
+    .\python C:\tabsetup\ScriptedInstaller.py install --installerLog C:/tabsetup/tabinstall.txt --enablePublicFwRule --secretsFile C:/tabsetup/secrets.json --registrationFile C:/tabsetup/registration.json --installDir C:/Tableau/ --trialLicense C:/tabsetup/tableau-server-installer.exe
+} else {
+    .\python C:\tabsetup\ScriptedInstaller.py install --installerLog C:/tabsetup/tabinstall.txt --enablePublicFwRule --secretsFile C:/tabsetup/secrets.json --registrationFile C:/tabsetup/registration.json --installDir C:/Tableau/ --licenseKey $license_key C:/tabsetup/tableau-server-installer.exe
+}
+
 
 ##  c:\\tabsetup\\installer-output.txt 2>&1
 
