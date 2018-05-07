@@ -261,6 +261,10 @@
         "adminUsername": {
             "type": "string",
             "value": "[parameters('adminUsername')]"
+        },
+        "Public IP": {
+            "type": "string",
+            "value": "output public ip??"
         }
     }
 }
