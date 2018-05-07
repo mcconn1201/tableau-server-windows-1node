@@ -228,7 +228,7 @@
                         }
                     },
                     {
-                        "name": "allow-80-traffic",
+                        "name": "allow-80-traffic-inbound",
                         "properties":{
                             "priority": 1010,
                             "protocol": "*",
@@ -241,7 +241,7 @@
                         }
                     },
                     {
-                        "name": "allow-80-traffic",
+                        "name": "allow-80-traffic-outbound",
                         "properties":{
                             "priority": 1010,
                             "protocol": "*",
