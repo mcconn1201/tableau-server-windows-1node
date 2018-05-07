@@ -68,7 +68,7 @@
         "networkInterfaceName": "tableau_server_NI",
         "virtualNetworkName": "tableau_server_VN",
         "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
-        "virtualMachineName": "tableau_server_VM",
+        "virtualMachineName": "TableauServerVM",
         "addressPrefix" : "10.0.0.0/16",
         "subnetAddressPrefix": "10.0.0.0/24",
         "enableDdosProtection": false
