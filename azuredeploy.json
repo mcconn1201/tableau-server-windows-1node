@@ -119,7 +119,7 @@
                     },
                 "protectedSettings": {
                     "commandToExecute": "start-process powershell -verb runAs -ArgumentList '-NoExit','& C:\\users\\mcorneli\\desktop\\config_script.ps1','-ts_admin_un 'admin' -ts_admin_pw 'admin' -reg_first_name 'Jamie' -reg_last_name 'Corneli' -reg_email 'jdata@tableau.com' -reg_company 'Tableau' -reg_title 'PM' -reg_department 'dev' -reg_industry 'tech' -reg_phone '8888888888' -reg_city 'Seattle' -reg_zip '98107' -reg_country 'USA' -license_key 'key' -trial $true'",
-                    "timestamp": 9876547676
+                    "timestamp": 987654555
                 }
             }
         },
