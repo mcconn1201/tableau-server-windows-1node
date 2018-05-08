@@ -22,6 +22,7 @@ Param(
 ## 1. make secrets.json file
 
 cd C:/
+mkdir tabsetup
 
 $secrets = @{
     content_admin_user = "$ts_admin_un"
