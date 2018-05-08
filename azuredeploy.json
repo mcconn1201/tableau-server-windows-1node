@@ -119,7 +119,7 @@
                     },
                 "protectedSettings": {
                     "commandToExecute": "start-process powershell -verb runAs 'c://tabsetup//config_script.ps1 -ArgumentList admin, admin, jamie, data, jdata@tableau.com, tableau, pm, dev, tech, 8888888, seattle, wa, 98107, usa, key, true'",
-                    "timestamp": 987654321
+                    "timestamp": 9876547676
                 }
             }
         },
