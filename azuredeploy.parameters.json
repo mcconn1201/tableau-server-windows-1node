@@ -51,7 +51,7 @@ re{
             "value":"Earth"
         },
         "is_trial":{
-            "value": "$True"
+            "value": true
         },
         "license_key":{
             "value": ""
