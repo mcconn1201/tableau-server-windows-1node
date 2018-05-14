@@ -31,6 +31,6 @@ $credential = New-Object System.Management.Automation.PSCredential($path, $passw
 Enable-PSRemoting -Force
 
 ## call config script
-Invoke-Command -FilePath "c:/tabsetup/config-script.ps1" -Credential $credential -ComputerName $env:COMPUTERNAME -ArgumentList $ts_admin_un, $ts_admin_pw, $reg_first_name, $reg_last_name, $reg_email, $reg_company, $reg_title, $reg_department, $reg_industry, $reg_phone, $reg_city, $reg_state, $reg_zip, $reg_country, $license_key, $trial
+Start-Process -FilePath "c:/tabsetup/config-script.ps1" -verb runAs -ArgumentList $ts_admin_un, $ts_admin_pw, $reg_first_name, $reg_last_name, $reg_email, $reg_company, $reg_title, $reg_department, $reg_industry, $reg_phone, $reg_city, $reg_state, $reg_zip, $reg_country, $license_key, $trial
 
 Disable-PSRemoting -Force
