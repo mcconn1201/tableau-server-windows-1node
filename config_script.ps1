@@ -65,29 +65,29 @@ Invoke-WebRequest -Uri "https://downloads.tableau.com/esdalt/2018.1.0/TableauSer
 ## COMMANDS
 
 ## 1. install python and add to path
-c:\\tabsetup\\python-2.7.12.msi /quiet /qn
-$env:Path = "C:\Python27\"
+c:/tabsetup/python-2.7.12.msi /quiet /qn
+$env:Path = "C:/Python27/"
 
 ## 2. install yaml
-cd c://Python27//Scripts/
-.\pip.exe install pyyaml
-Set-Location -Path C://Python27//Scripts
+cd c:/Python27/Scripts/
+./pip.exe install pyyaml
+Set-Location -Path C:/Python27/Scripts
 
 ## 2.5 make tabinstall.txt
-New-Item c://tabsetup//tabinstall.txt -ItemType file
+New-Item c:/tabsetup/tabinstall.txt -ItemType file
 
 ## 3. run installer script
 # accomodate for trial key
-cd C:\Python27\
+cd C:/Python27/
 if ($license_key.ToLower() = "trial") {
-    .\python C:\tabsetup\ScriptedInstaller.py install --installerLog C:/tabsetup/tabinstall.txt --enablePublicFwRule --secretsFile C:/tabsetup/secrets.json --registrationFile C:/tabsetup/registration.json --installDir C:/Tableau/ --trialLicense C:/tabsetup/tableau-server-installer.exe
+    ./python C:/tabsetup/ScriptedInstaller.py install --installerLog C:/tabsetup/tabinstall.txt --enablePublicFwRule --secretsFile C:/tabsetup/secrets.json --registrationFile C:/tabsetup/registration.json --installDir C:/Tableau/ --trialLicense C:/tabsetup/tableau-server-installer.exe
 } else {
-    .\python C:\tabsetup\ScriptedInstaller.py install --installerLog C:/tabsetup/tabinstall.txt --enablePublicFwRule --secretsFile C:/tabsetup/secrets.json --registrationFile C:/tabsetup/registration.json --installDir C:/Tableau/ --licenseKey $license_key C:/tabsetup/tableau-server-installer.exe
+    ./python C:/tabsetup/ScriptedInstaller.py install --installerLog C:/tabsetup/tabinstall.txt --enablePublicFwRule --secretsFile C:/tabsetup/secrets.json --registrationFile C:/tabsetup/registration.json --installDir C:/Tableau/ --licenseKey $license_key C:/tabsetup/tableau-server-installer.exe
 }
 
 
-##  c:\\tabsetup\\installer-output.txt 2>&1
+##  c:/tabsetup/installer-output.txt 2>&1
 
 ## 4. cleanup secrets
 
-del c:\\tabsetup\\secrets.json
+del c:/tabsetup/secrets.json

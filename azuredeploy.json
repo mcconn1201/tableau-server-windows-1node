@@ -3,16 +3,28 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "adminUsername": {
-            "type": "string"
+            "type": "string",
+            "metadata": {
+                "description": "Username for Windows machine."
+            }
         },
         "adminPassword": {
-            "type": "securestring"
+            "type": "securestring",
+            "metadata": {
+                "description": "Password for Windows machine."
+            }
         },
         "tableau_admin_username":{
-            "type": "string"
+            "type": "string",
+            "metadata": {
+                "description": "Tableau Server administrator username."
+            }
         },
         "tableau_admin_password":{
-            "type": "securestring"
+            "type": "securestring",
+            "metadata": {
+                "description": "Tableau Server administrator password."
+            }
         },
         "registration_first_name":{
             "type": "string"
