@@ -51,7 +51,7 @@
             "type":"string"
         },
         "is_trial":{
-            "type": "bool"
+            "type": "string"
         },
         "license_key":{
             "type": "string"
