@@ -59,19 +59,18 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/maddyloo/tableau-serve
 Invoke-WebRequest -Uri "https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi" -OutFile "C:/tabsetup/python-2.7.12.msi"
 
 ## 5. download Tableau Server .exe
-
 Invoke-WebRequest -Uri "https://downloads.tableau.com/esdalt/2018.1.0/TableauServer-64bit-2018-1-0.exe" -Outfile "C:/tabsetup/tableau-server-installer.exe"
 
 ## COMMANDS
 
-## 1. install python and add to path
+## 1. install python (and add to path)
 c:/tabsetup/python-2.7.12.msi /quiet /qn
 $env:Path = "C:/Python27/"
 
 ## 2. install yaml
-cd c:/Python27/Scripts/
-./pip.exe install pyyaml
-Set-Location -Path C:/Python27/Scripts
+Set-Location -Path "C:/Python27/Scripts"
+.\pip install pyyaml
+Set-Location -Path "C:/Python27/Scripts"
 
 ## 2.5 make tabinstall.txt
 New-Item c:/tabsetup/tabinstall.txt -ItemType file
