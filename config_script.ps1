@@ -13,8 +13,7 @@ Param(
     [string]$reg_state,
     [string]$reg_zip,
     [string]$reg_country,
-    [string]$license_key,
-    [boolean]$trial
+    [string]$license_key
 )
 
 ## FILES
@@ -80,7 +79,7 @@ New-Item c://tabsetup//tabinstall.txt -ItemType file
 ## 3. run installer script
 # accomodate for trial key
 cd C:\Python27\
-if ($trial) {
+if ($license_key.ToLower() = "trial") {
     .\python C:\tabsetup\ScriptedInstaller.py install --installerLog C:/tabsetup/tabinstall.txt --enablePublicFwRule --secretsFile C:/tabsetup/secrets.json --registrationFile C:/tabsetup/registration.json --installDir C:/Tableau/ --trialLicense C:/tabsetup/tableau-server-installer.exe
 } else {
     .\python C:\tabsetup\ScriptedInstaller.py install --installerLog C:/tabsetup/tabinstall.txt --enablePublicFwRule --secretsFile C:/tabsetup/secrets.json --registrationFile C:/tabsetup/registration.json --installDir C:/Tableau/ --licenseKey $license_key C:/tabsetup/tableau-server-installer.exe

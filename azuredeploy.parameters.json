@@ -50,11 +50,8 @@
         "registration_country":{
             "value":"Earth"
         },
-        "is_trial":{
-            "value": "$True"
-        },
         "license_key":{
-            "value": "key"
+            "value": "trial"
         }
     }
 }
