@@ -4,66 +4,122 @@
     "parameters": {
         "adminUsername": {
             "type": "string",
+            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Username for Windows machine."
             }
         },
         "adminPassword": {
             "type": "securestring",
+            "defaultValue": "GEN-PASSWORD",
             "metadata": {
                 "description": "Password for Windows machine."
             }
         },
         "tableau_admin_username":{
             "type": "string",
+            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Tableau Server administrator username."
             }
         },
         "tableau_admin_password":{
             "type": "securestring",
+            "defaultValue": "GEN-PASSWORD",
             "metadata": {
                 "description": "Tableau Server administrator password."
             }
         },
         "registration_first_name":{
-            "type": "string"
+            "type": "string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "First name to use for registering Tableau Server"
+            }
         },
         "registration_last_name":{
-            "type": "string"
+            "type": "string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Last name to use for registering Tableau Server"
+            }
         },
         "registration_email":{
-            "type": "string"
+            "type": "string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Email address to use for registering Tableau Server"
+            }
         },
         "registration_company":{
-            "type":"string"
+            "type":"string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Company name to use for registering Tableau Server"
+            }
         },
         "registration_title":{
-            "type":"string"
+            "type":"string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Job title to use for registering Tableau Server"
+            }
         },
         "registration_department":{
-            "type":"string"
+            "type":"string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Department name to use for registering Tableau Server"
+            }
         },
         "registration_industry":{
-            "type":"string"
+            "type":"string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Industry name to use for registering Tableau Server"
+            }
         },
         "registration_phone":{
-            "type":"string"
+            "type":"string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Phone number to use for registering Tableau Server"
+            }
         },
         "registration_city":{
-            "type":"string"
+            "type":"string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Your current City - to use for registering Tableau Server"
+            }
         },
         "registration_state":{
-            "type":"string"
+            "type":"string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Your current State - to use for registering Tableau Server"
+            }
         },
         "registration_zip":{
-            "type":"string"
+            "type":"string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Your current zip - to use for registering Tableau Server"
+            }
         },
         "registration_country":{
-            "type":"string"
+            "type":"string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Your current Country - to use for registering Tableau Server"
+            }
         },
         "license_key":{
-            "type": "string"
+            "type": "string",
+            "defaultValue": "GEN-UNIQUE",
+            "metadata": {
+                "description": "Enter Tableau Server License key.  ** If you would like to run a 2-week free trial please enter 'trial'"
+            }
         }
     },
     "variables": {
@@ -268,10 +324,6 @@
         "adminUsername": {
             "type": "string",
             "value": "[parameters('adminUsername')]"
-        },
-        "Public IP": {
-            "type": "string",
-            "value": "output public ip??"
         }
     }
 }
