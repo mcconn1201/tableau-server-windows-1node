@@ -169,7 +169,7 @@
                 "type": "CustomScriptExtension",
                 "typeHandlerVersion": "1.9",
                 "autoUpgradeMinorVersion": true,
-                "settings" : {
+                "protectedSettings" : {
                     "fileUris": [
                         "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/config_script.ps1"
                     ],
