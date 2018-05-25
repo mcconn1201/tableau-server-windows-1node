@@ -75,8 +75,7 @@ Set-Location -Path C:/Python27/Scripts
 ## 2.5 make tabinstall.txt
 New-Item c:/tabsetup/tabinstall.txt -ItemType file
 
-## 3. run installer script
-# accomodate for trial key
+## 3. run installer script & accomodate for trial key
 cd C:/Python27/
 if ($license_key.ToLower() = "trial") {
     ./python C:/tabsetup/ScriptedInstaller.py install --installerLog C:/tabsetup/tabinstall.txt --enablePublicFwRule --secretsFile C:/tabsetup/secrets.json --registrationFile C:/tabsetup/registration.json --installDir C:/Tableau/ --trialLicense C:/tabsetup/tableau-server-installer.exe
