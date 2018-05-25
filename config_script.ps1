@@ -51,26 +51,26 @@ $registration = @{
 $registration | ConvertTo-Json -depth 10 | Out-File "C:/tabsetup/registration.json" -Encoding ASCII
 
 ## 3. download python installer
-# Refer this back to Kitty's hosted version for consistency
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/ScriptedInstaller.py" -OutFile "C:/tabsetup/ScriptedInstaller.py"
+## Refer this back to Kitty's hosted version for consistency
+#Invoke-WebRequest -Uri "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/ScriptedInstaller.py" -OutFile "C:/tabsetup/ScriptedInstaller.py"
 
 ## 4. Download python .msi
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest -Uri "https://www.python.org/ftp/python/2.7.12/python-2.7.12.msi" -OutFile "C:/tabsetup/python-2.7.12.msi"
 
 ## 5. download Tableau Server .exe
-Invoke-WebRequest -Uri "https://downloads.tableau.com/esdalt/2018.1.0/TableauServer-64bit-2018-1-0.exe" -Outfile "C:/tabsetup/tableau-server-installer.exe"
+#Invoke-WebRequest -Uri "https://downloads.tableau.com/esdalt/2018.1.0/TableauServer-64bit-2018-1-0.exe" -Outfile "C:/tabsetup/tableau-server-installer.exe"
 
 ## COMMANDS
 
-## 1. install python (and add to path)
-c:/tabsetup/python-2.7.12.msi /quiet /qn
+## 1. install python (and add to path) - wait for install to proceed
+& c:/tabsetup/python-2.7.12.msi /quiet /qn | out-null
 $env:Path = "C:/Python27/"
 
 ## 2. install yaml
-Set-Location -Path "C:/Python27/Scripts"
+Set-Location -Path C:/Python27/Scripts
 .\pip install pyyaml
-Set-Location -Path "C:/Python27/Scripts"
+Set-Location -Path C:/Python27/Scripts
 
 ## 2.5 make tabinstall.txt
 New-Item c:/tabsetup/tabinstall.txt -ItemType file
