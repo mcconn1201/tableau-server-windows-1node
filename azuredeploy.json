@@ -4,119 +4,110 @@
     "parameters": {
         "adminUsername": {
             "type": "string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Username for Windows machine."
             }
         },
         "adminPassword": {
             "type": "securestring",
-            "defaultValue": "GEN-PASSWORD",
             "metadata": {
                 "description": "Password for Windows machine."
             }
         },
         "tableau_admin_username":{
             "type": "string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Tableau Server administrator username."
             }
         },
         "tableau_admin_password":{
             "type": "securestring",
-            "defaultValue": "GEN-PASSWORD",
             "metadata": {
                 "description": "Tableau Server administrator password."
             }
         },
         "registration_first_name":{
             "type": "string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "First name to use for registering Tableau Server"
             }
         },
         "registration_last_name":{
             "type": "string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Last name to use for registering Tableau Server"
             }
         },
         "registration_email":{
             "type": "string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Email address to use for registering Tableau Server"
             }
         },
         "registration_company":{
             "type":"string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Company name to use for registering Tableau Server"
             }
         },
         "registration_title":{
             "type":"string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Job title to use for registering Tableau Server"
             }
         },
         "registration_department":{
             "type":"string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Department name to use for registering Tableau Server"
             }
         },
         "registration_industry":{
             "type":"string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Industry name to use for registering Tableau Server"
             }
         },
         "registration_phone":{
             "type":"string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Phone number to use for registering Tableau Server"
             }
         },
         "registration_city":{
             "type":"string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Your current City - to use for registering Tableau Server"
             }
         },
         "registration_state":{
             "type":"string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Your current State - to use for registering Tableau Server"
             }
         },
         "registration_zip":{
             "type":"string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Your current zip - to use for registering Tableau Server"
             }
         },
         "registration_country":{
             "type":"string",
-            "defaultValue": "GEN-UNIQUE",
             "metadata": {
                 "description": "Your current Country - to use for registering Tableau Server"
             }
         },
+        "location":{
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]",
+            "metadata":{
+                "description": "Azure location where you would like to deploy Tableau Server"
+            }
+        },
         "license_key":{
             "type": "string",
-            "defaultValue": "GEN-UNIQUE",
+            "defaultValue": "trial",
             "metadata": {
                 "description": "Enter Tableau Server License key.  ** If you would like to run a 2-week free trial please enter 'trial'"
             }
@@ -143,7 +134,7 @@
             "apiVersion":"2018-02-01",
             "name": "[variables('virtualNetworkName')]",
             "type": "Microsoft.Network/virtualNetworks",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('location')]",
             "properties": {
                 "addressSpace": {
                     "addressPrefixes": [
@@ -165,7 +156,7 @@
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "name": "[concat(variables('virtualMachineName'), '/', 'config-app')]",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('location')]",
             "dependsOn": [
                     "[concat('Microsoft.Compute/virtualMachines/', variables('virtualMachineName'))]"
                 ],
@@ -189,7 +180,7 @@
             "name": "[variables('virtualMachineName')]",
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2017-03-30",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('location')]",
             "dependsOn": [
                 "[concat('Microsoft.Network/networkInterfaces/', variables('networkInterfaceName'))]"
             ],
@@ -233,7 +224,7 @@
             "name": "[variables('networkInterfaceName')]",
             "type": "Microsoft.Network/networkInterfaces",
             "apiVersion": "2016-09-01",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('location')]",
             "dependsOn": [
                 "[concat('Microsoft.Network/publicIpAddresses/', variables('publicIpAddressName'))]",
                 "[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName'))]"
@@ -262,7 +253,7 @@
             "name": "[variables('publicIpAddressName')]",
             "type": "Microsoft.Network/publicIpAddresses",
             "apiVersion": "2017-08-01",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('location')]",
             "properties": {
                 "publicIpAllocationMethod": "[variables('publicIpAddressType')]"
             },
@@ -274,7 +265,7 @@
             "name": "[variables('networkSecurityGroupName')]",
             "type": "Microsoft.Network/networkSecurityGroups",
             "apiVersion": "2017-06-01",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('location')]",
             "properties": {
                 "securityRules": [
                     {
