@@ -64,7 +64,8 @@ Invoke-WebRequest -Uri "https://www.python.org/ftp/python/2.7.12/python-2.7.12.m
 ## COMMANDS
 
 ## 1. install python (and add to path) - wait for install to proceed
-& c:/tabsetup/python-2.7.12.msi /quiet /qn -wait
+# c:/tabsetup/python-2.7.12.msi /quiet /qn -wait
+Start-Process "c:/tabsetup/python-2.7.12.msi" /quiet /qn -Wait
 $env:Path = "C:/Python27/"
 
 ## 2. install yaml
