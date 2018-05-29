@@ -62,7 +62,7 @@ You can click the "deploy to Azure" button at the beginning of this document or 
 
 #### Connect
 
-Navigate to Tableau Server using the public IP address: http://<Public IP>:80
+Navigate to Tableau Server using the public IP address: http://- Public IP -:80
 
 #### Management
 
@@ -72,4 +72,4 @@ Manage your Azure resources directly from your Azure portal.  Use the web UI and
 
 Follow these requirements when setting parameters: https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-username-requirements-when-creating-a-vm
 
-This template is intended as a sample for how to install Tableau Server.  If you choose to run a production version of Tableau Server you are responsible for managing the cost & security of your Azure & Tableau deployment.
+This template is intended as a sample for how to install Tableau Server.  If you choose to run a production version of Tableau Server you are responsible for managing the cost & security of your Azure & Tableau deployment.  This version has been written by Madeleine Corneli and is not officially endorsed by Tableau Software.
