@@ -1,5 +1,3 @@
-https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-username-requirements-when-creating-a-vm
-
 # Tableau Server on Windows - Single Node   
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F100-blank-template%2Fazuredeploy.json" target="_blank">
@@ -71,5 +69,7 @@ Navigate to Tableau Server using the public IP address: http://<Public IP>:80
 Manage your Azure resources directly from your Azure portal.  Use the web UI and Desktop Interface to adminsitrate your Tableau Server instance: https://onlinehelp.tableau.com/current/server/en-us/admin.htm  
 
 ## Notes
+
+Follow these requirements when setting parameters: https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-username-requirements-when-creating-a-vm
 
 This template is intended as a sample for how to install Tableau Server.  If you choose to run a production version of Tableau Server you are responsible for managing the cost & security of your Azure & Tableau deployment.
