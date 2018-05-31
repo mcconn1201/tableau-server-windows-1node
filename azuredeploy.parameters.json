@@ -3,55 +3,55 @@
   "contentVersion": "1.0.0.0",
    "parameters": {
         "adminUsername": {
-            "value": "GEN-UNIQUE"
+            "value": "mcorneli"
         },
         "adminPassword": {
-            "value": "GEN-PASSWORD"
+            "value": "MasterUser!"
         },
         "tableau_admin_username":{
-            "value": "GEN-UNIQUE"
+            "value": "admin"
         },
         "tableau_admin_password":{
-            "value": "GEN-UNIQUE"
+            "value": "admin"
         },
         "registration_first_name":{
-            "value": "GEN-UNIQUE"
+            "value": "Jamie"
         },
         "registration_last_name":{
-            "value": "GEN-UNIQUE"
+            "value": "Data"
         },
         "registration_email":{
-            "value": "GEN-UNIQUE"
+            "value": "jdata@tableau.com"
         },
         "registration_company":{
-            "value":"GEN-UNIQUE"
+            "value":"Tableau"
         },
         "registration_title":{
-            "value":"GEN-UNIQUE"
+            "value":"PM"
         },
         "registration_department":{
-            "value":"GEN-UNIQUE"
+            "value":"Dev"
         },
         "registration_industry":{
-            "value":"GEN-UNIQUE"
+            "value":"Tech"
         },
         "registration_phone":{
-            "value":"GEN-UNIQUE-10"
+            "value":"8888888"
         },
         "registration_city":{
-            "value":"GEN-UNIQUE"
+            "value":"Seattle"
         },
         "registration_state":{
-            "value":"GEN-UNIQUE"
+            "value":"WA"
         },
         "registration_zip":{
-            "value":"GEN-UNIQUE-5"
+            "value":"98103"
         },
         "registration_country":{
-            "value":"GEN-UNIQUE"
+            "value":"Earth"
         },
         "license_key":{
-            "value": "GEN-UNIQUE"
+            "value": "trial"
         }
     }
 }
