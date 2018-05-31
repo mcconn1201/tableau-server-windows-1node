@@ -171,7 +171,7 @@
                 "autoUpgradeMinorVersion": true,
                 "settings" : {
                     "fileUris": [
-                        "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/scripts/config_script.ps1"
+                        "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/Scripts/config_script.ps1"
                     ]
                 },
                 "protectedSettings" : {
