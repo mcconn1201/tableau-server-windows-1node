@@ -116,7 +116,7 @@
     "variables": {
         "publicIpAddressType" : "Static",
         "publicIpAddressSku" : "Standard",
-        "virtualMachineSize": "Standard_D16_v3",
+        "virtualMachineSize": "Standard_D16s_v3",
         "publicIpAddressName" : "tableau_server_IP",
         "subnetName": "tableau_server_SN",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/', variables('subnetName'))]",
