@@ -111,6 +111,20 @@
             "metadata": {
                 "description": "Enter Tableau Server License key.  ** If you would like to run a 2-week free trial please enter 'trial'"
             }
+        },
+        "_artifactsLocation": {
+          "type": "string",
+          "metadata": {
+              "description": "The base URI where artifacts required by this template are located including a trailing '/'"
+          },
+          "defaultValue": "[deployment().properties.templateLink.uri]"
+        },
+        "_artifactsLocationSasToken":{
+            "type":"securestring",
+            "metadata": {
+                "description": "No Sas token required."
+            },
+            "defaultValue":""
         }
     },
     "variables": {
@@ -131,6 +145,19 @@
         "ServerInstallerURL": "https://raw.githubusercontent.com/tableau/server-install-script-samples/master/windows/tabadmin/ScriptedInstaller.py"
     },
     "resources": [
+        {
+            "apiVersion": "2017-05-10",
+            "name": "pid-e78b95a3-81e6-4ac8-af97-65443904dffd",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "resources": []
+                }
+            }
+        },
         {
             "apiVersion":"2018-02-01",
             "name": "[variables('virtualNetworkName')]",
@@ -171,7 +198,7 @@
                 "autoUpgradeMinorVersion": true,
                 "settings" : {
                     "fileUris": [
-                        "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/scripts/config_script.ps1"
+                        "https://raw.githubusercontent.com/maddyloo/tableau-server-windows-1node/master/config_script.ps1"
                     ]
                 },
                 "protectedSettings" : {
@@ -315,7 +342,7 @@
         }
     ],
     "outputs": {
-        "adminUsername": {
+        "Tableau Server admin username": {
             "type": "string",
             "value": "[parameters('adminUsername')]"
         }
