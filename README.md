@@ -9,14 +9,16 @@
 
 To deploy this template using the scripts from the root of this repo: 
 
+Powershell:
 ```PowerShell
 .\Deploy-AzureResourceGroup.ps1 -ResourceGroupLocation 'west us' -ArtifactsStagingDirectory 'tableau-server-windows-1node' -UploadArtifacts 
 ```
+Bash:
 ```bash
 azure-group-deploy.sh -a tableau-server-windows-1node -l eastus -u
 ```
 
-This template has artifacts that need to be "staged" for deployment (Configuration Script) so you have to set the upload switch on the command.
+This template has artifacts that need to be "staged" for deployment (Configuration script & Server installer scripts) so you have to set the upload switch on the command.
 You can optionally specify a storage account to use, if so the storage account must already exist within the subscription.  If you don't want to specify a storage account
 one will be created by the script (think of this as "temp" storage for AzureRM) and reused by subsequent deployments.
 
@@ -24,7 +26,7 @@ This template deploys a **single node Tableau Server instance on a Windows, Stan
 
 `Tags: Tableau, Tableau Server, Windows Server, Analytics, Self-Service, Data Visualization, Windows`
 
-## Solution overview and deployed resources
+## Tableau Server and deployed resources overview
 
 Tableau Server on Azure is browser and mobile-based visual analytics anyone can use.  Publish interactive dashboards with Tableau Desktop and share them throughout your organization. Embedded or as a stand-alone application, you can empower your business to find answers in minutes, not months.  By deploying Tableau Server on Azure with this quickstart you can take full advantage of the power and flexibility of Azure Cloud infrastructure.  
 
@@ -38,9 +40,9 @@ The following resources are deployed as part of the solution
 
 Business Intelligence Software Provider
 
-+ **Tableau Server Installer**: Hosted collaboration software where users can share and manage Tableau Dashboards and data sources.
++ **Tableau Server Installer**: Hosted collaboration software where users can share and manage Tableau Dashboards and data sources. 
++ **config_script.ps1**: Powershell script that installs dependancies and calls python installer
 + **ScriptedInstaller.py**: Python script that performs a silent Tableau Server install
-+ **config_script.ps1**: Powershell script isntalls dependancies and calls python installer
 
 #### Microsoft Azure
 
