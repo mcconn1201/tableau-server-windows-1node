@@ -26,6 +26,12 @@
                 "description": "Tableau Server administrator password."
             }
         },
+        "source_CIDR":{
+            "type": "string",
+            "metadata": {
+                "description": "CIDR block for RDP source - limit to your IP for secure access."
+            }
+        },
         "registration_first_name":{
             "type": "string",
             "metadata": {
@@ -305,7 +311,7 @@
                             "protocol": "TCP",
                             "access": "Allow",
                             "direction": "Inbound",
-                            "sourceAddressPrefix": "*",
+                            "sourceAddressPrefix": "[variables('source_CIDR')]",
                             "sourcePortRange": "*",
                             "destinationAddressPrefix": "*",
                             "destinationPortRange": "3389"
