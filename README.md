@@ -41,7 +41,7 @@ Public Cloud Platform
 
 ## Prerequisites
 
-By default this template will install a 12-day free trial of Tableau Server.  To switch to a licensed version please contact your Tableau Sales representative.
+By default this template will install a free 14-day trial of Tableau Server.  To switch to a licensed version please contact your Tableau Sales representative.
 
 ## Deployment steps
 
